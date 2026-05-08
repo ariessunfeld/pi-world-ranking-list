@@ -1,0 +1,43 @@
+---
+import Layout from "../../components/Layout.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import { loadRecords } from "../../lib/data";
+import { filterRecords } from "../../lib/rankings";
+import { withBase } from "../../lib/urls";
+
+const records = loadRecords();
+const counts = {
+  pi: filterRecords(records, "pi").length,
+  piJuggling: filterRecords(records, "pi", { juggling: true }).length,
+  e: filterRecords(records, "e").length,
+  eJuggling: filterRecords(records, "e", { juggling: true }).length,
+  sqrt2: filterRecords(records, "sqrt2").length,
+  sqrt2Juggling: filterRecords(records, "sqrt2", { juggling: true }).length,
+};
+---
+
+<Layout title="Lists" description="Overview of Pi World Ranking List ranking categories." path="/lists/">
+  <Breadcrumbs items={[{ label: "Lists" }]} />
+  <section class="content container">
+    <h1>Ranking Lists</h1>
+    <p class="lead">
+      The main lists are generated from canonical public records. Special historical pages are kept
+      separately so nonstandard performances do not affect normal digit rankings.
+    </p>
+
+    <div class="overview-grid">
+      <a class="item-card" href={withBase("/pi/")}><h3>Pi by digits</h3><p>{counts.pi.toLocaleString()} records.</p></a>
+      <a class="item-card" href={withBase("/pi/countries/")}><h3>Pi by country</h3><p>Country rankings generated from the same data.</p></a>
+      <a class="item-card" href={withBase("/pi/continents/")}><h3>Pi by continent</h3><p>Continent rankings generated from the same data.</p></a>
+      <a class="item-card" href={withBase("/pi/juggling/")}><h3>Pi and juggling</h3><p>{counts.piJuggling.toLocaleString()} records.</p></a>
+      <a class="item-card" href={withBase("/e/")}><h3>e by digits</h3><p>{counts.e.toLocaleString()} records.</p></a>
+      <a class="item-card" href={withBase("/e/juggling/")}><h3>e and juggling</h3><p>{counts.eJuggling.toLocaleString()} records.</p></a>
+      <a class="item-card" href={withBase("/sqrt2/")}><h3>sqrt(2) by digits</h3><p>{counts.sqrt2.toLocaleString()} records.</p></a>
+      <a class="item-card" href={withBase("/sqrt2/juggling/")}><h3>sqrt(2) and juggling</h3><p>{counts.sqrt2Juggling.toLocaleString()} records.</p></a>
+      <a class="item-card" href={withBase("/special/amazing-performances/")}><h3>Amazing performances</h3><p>Historical nonstandard performances.</p></a>
+      <a class="item-card" href={withBase("/special/pi-matrix/")}><h3>Pi Matrix</h3><p>Matrix and memory test records.</p></a>
+      <a class="item-card" href={withBase("/special/ultimate-test/")}><h3>Ultimate Test</h3><p>The Ultimate Test of Pi.</p></a>
+      <a class="item-card" href={withBase("/special/pi-permutation/")}><h3>Pi Permutation</h3><p>Permutation discipline records.</p></a>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,29 @@
+---
+import Layout from "../../components/Layout.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import RankingTable from "../../components/RankingTable.astro";
+import LastUpdated from "../../components/LastUpdated.astro";
+import DataDownloadLinks from "../../components/DataDownloadLinks.astro";
+import { loadRecords } from "../../lib/data";
+import { filterRecords, rankRecords } from "../../lib/rankings";
+import { withBase } from "../../lib/urls";
+
+const records = filterRecords(loadRecords(), "pi");
+const ranked = rankRecords(records);
+---
+
+<Layout title="Pi Ranking" description="Main Pi memorization ranking by digits." path="/pi/">
+  <Breadcrumbs items={[{ label: "Lists", href: "/lists/" }, { label: "Pi" }]} />
+  <section class="content container">
+    <h1>Pi Ranking</h1>
+    <p class="lead">Normal public Pi memorization records sorted by digits.</p>
+    <LastUpdated records={records} />
+    <div class="button-row">
+      <a class="button" href={withBase("/pi/countries/")}>Country rankings</a>
+      <a class="button" href={withBase("/pi/continents/")}>Continent rankings</a>
+      <a class="button" href={withBase("/pi/juggling/")}>Juggling</a>
+    </div>
+    <DataDownloadLinks />
+    <RankingTable records={ranked} caption="Pi World Ranking List" tableId="pi-ranking" />
+  </section>
+</Layout>

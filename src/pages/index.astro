@@ -1,0 +1,113 @@
+---
+import Layout from "../components/Layout.astro";
+import DataDownloadLinks from "../components/DataDownloadLinks.astro";
+import { loadRecords } from "../lib/data";
+import { filterRecords, topRecord } from "../lib/rankings";
+import { withBase } from "../lib/urls";
+
+const records = loadRecords();
+const piTop = topRecord(records, "pi");
+const eTop = topRecord(records, "e");
+const sqrtTop = topRecord(records, "sqrt2");
+const piCount = filterRecords(records, "pi").length;
+const eCount = filterRecords(records, "e").length;
+const sqrtCount = filterRecords(records, "sqrt2").length;
+const basePath = withBase("/");
+---
+
+<Layout
+  title="Pi World Ranking List"
+  description="A static, data-first public archive of Pi World Ranking List records."
+  path="/"
+>
+  <script is:inline define:vars={{ basePath }}>
+    (function () {
+      var params = new URLSearchParams(window.location.search);
+      var page = params.get("page");
+      var category = params.get("category");
+      var sort = params.get("sort");
+      var target = null;
+      if (page === "lists" && category === "pi" && sort === "country") target = "/pi/countries/";
+      else if (page === "lists" && category === "pi" && sort === "continent") target = "/pi/continents/";
+      else if (page === "lists" && category === "pi") target = "/pi/";
+      else if (page === "lists" && category === "e") target = "/e/";
+      else if (page === "lists" && category === "sqrt2") target = "/sqrt2/";
+      else if (page === "amazing") target = "/special/amazing-performances/";
+      else if (page === "matrix") target = "/special/pi-matrix/";
+      else if (page === "ultimate") target = "/special/ultimate-test/";
+      else if (page === "pi-permutation") target = "/special/pi-permutation/";
+      else if (page === "rules" || page === "registration") target = "/rules/";
+      else if (page === "background") target = "/background/";
+      else if (page === "links") target = "/links/";
+      if (target) window.location.replace(basePath.replace(/\/$/, "") + target);
+    })();
+  </script>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <p class="eyebrow">Public memory ranking archive</p>
+        <h1>Pi World Ranking List</h1>
+        <p class="lead">
+          A modern static rebuild of the public Pi World Ranking List, generated from canonical
+          record data and designed for transparent maintenance.
+        </p>
+        <div class="button-row">
+          <a class="button" href={withBase("/pi/")}>Pi ranking</a>
+          <a class="button" href={withBase("/lists/")}>All lists</a>
+          <a class="button" href={withBase("/rules/")}>Rules</a>
+        </div>
+      </div>
+      <img src={withBase("/images/pi-map.jpg")} alt="Historic Pi World Ranking List map graphic" />
+    </div>
+  </section>
+
+  <section class="content container">
+    <div class="notice">
+      The archived live site announced that the list was on hold. This replacement preserves the
+      public ranking data and documents a maintainable path for future reviewed updates.
+    </div>
+
+    <h2>Current Imported Leaders</h2>
+    <div class="stats-grid">
+      <div class="stat">
+        <strong>{piTop?.digits.toLocaleString()}</strong>
+        <span>Pi digits: {piTop?.display_name}</span>
+      </div>
+      <div class="stat">
+        <strong>{eTop?.digits.toLocaleString()}</strong>
+        <span>e digits: {eTop?.display_name}</span>
+      </div>
+      <div class="stat">
+        <strong>{sqrtTop?.digits.toLocaleString()}</strong>
+        <span>sqrt(2) digits: {sqrtTop?.display_name}</span>
+      </div>
+    </div>
+
+    <h2>Data-First Rebuild</h2>
+    <p>
+      Rankings are generated at build time from `data/records.csv`. Rank numbers are not edited by
+      hand: ties share the same rank and later ranks skip according to competition ranking.
+    </p>
+    <div class="overview-grid">
+      <a class="item-card" href={withBase("/pi/")}>
+        <h3>Pi</h3>
+        <p>{piCount.toLocaleString()} normal public records.</p>
+      </a>
+      <a class="item-card" href={withBase("/e/")}>
+        <h3>e</h3>
+        <p>{eCount.toLocaleString()} normal public records.</p>
+      </a>
+      <a class="item-card" href={withBase("/sqrt2/")}>
+        <h3>Square root of 2</h3>
+        <p>{sqrtCount.toLocaleString()} normal public records.</p>
+      </a>
+    </div>
+
+    <h2>Public Data</h2>
+    <p>
+      Public records are available for review and reuse. Witness names, addresses, emails, scans,
+      and other private verification evidence do not belong in this repository.
+    </p>
+    <DataDownloadLinks />
+  </section>
+</Layout>

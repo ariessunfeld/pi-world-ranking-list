@@ -1,0 +1,423 @@
+/*##################################################################################
+#   Pi World Ranking List  -  CSS                                                  #
+#   Author: Norbert van Koningsveld                                                #
+#   Created: 01.11.2010                                                            #
+#   Last Update: 01.11.2010                                                        #
+###################################################################################*/
+.clear
+{
+clear:both;}
+a:link {text-decoration: none; color:#ed7b00; font-weight:bold;}
+ a:visited {text-decoration: none; color:#ed7b00;  font-weight:bold;}
+ a:active {text-decoration: none; color:#ed7b00;  font-weight:bold;}
+ a:hover {text-decoration: underline; color:#ed7b00;  font-weight:bold;}
+body
+{
+color:#0c1e44;
+font-family:arial, sans;
+position:relative;
+background:url(images/background-gradient.jpg);
+margin:0px;
+background-repeat:repeat-x;
+
+background-color:#ebf4f9;
+padding-top:0px;
+margin-top:0px;
+padding-bottom:0px;
+margin-bottom:0px;
+
+}
+.stat-highlight
+{
+font-weight:bold;
+font-size:2em;
+color:#0d6f9f;
+}
+#top-banner
+{
+    background-image:url(images/top-banner.jpg);
+    background-repeat:no-repeat;
+    width:100%;
+    background-position: top center;
+    height:52px;
+    background-color:#0d6f9f;
+    position:absolute;
+    margin:0px;
+}
+
+#seite
+{
+
+height: auto !important;
+margin-bottom: 0px;
+margin-left: auto;
+margin-right: auto;
+padding-top:30px;
+position: relative;
+
+width: 980px;
+
+}
+#content
+{
+background-color:#e0edf3;
+  display:block;
+  position:relative;
+min-height:800px;
+height:auto !important;
+height:800px;
+float:left;
+width:100%;
+
+}
+
+#header
+{
+width:100%;
+position:relative;
+padding-top:1px;
+margin-top:1px;
+height:192px;
+background:url(images/header_980x192.jpg);
+background-repeat:no-repeat;
+}
+
+#menue
+{
+position:relative;
+top:-1px;
+
+width:600px;
+float:right;
+right:0px;
+height:60px;
+}
+#menue ul
+{
+    float:right;
+    margin-right:20px;
+}
+#menue li a:link,
+#menue li a:visited,
+
+#menue li a:active
+{
+padding-top:0px;
+font-family:arial, sans;
+text-decoration:none;
+color:#0c4c6a;
+text-align:right;
+font-weight:bold;
+display:block;
+height:26px;
+padding-top:10px;
+}
+#menue li{
+list-style: none;
+float:left;
+margin-left:30px;
+
+}
+
+#menu #navigation ul li:hover a,
+#menue li:hover a:visited,
+#menue li:hover a:link,
+#menue li:hover a:active
+{
+    color:#ed7b00 !important;
+}
+
+
+#title
+{
+position:relative;
+margin:0px;
+padding:0px;
+width:100%;
+
+background-repeat:no-repeat;
+margin-bottom:0;
+min-height:42px;
+height:auto !important;
+height:42px;
+}
+#title h2
+{
+position:relative;
+padding:0px;
+margin:0px;
+margin-left:39px;
+padding-top:15px;
+margin-top:0px;
+font-family:arial, sans;
+font-size:15pt;
+font-weight:bold;
+color:#0c4c6a;
+text-transform:uppercase;
+}
+
+#contentinner
+{
+
+position:relative;
+margin: 38px;
+margin-bottom:0px;
+margin-top:10px;
+border:0px solid black;
+padding-bottom:100px;
+
+}
+.subtitle
+{
+font-weight:bold;
+font-size:20pt;
+
+text-align:left;
+margin:0px 0px 20px 0px;
+color:#0c4c6a;
+}
+table.ranking
+{
+font-family:arial, sans;
+}
+
+table.ranking tr
+{
+
+font-size:10pt;
+height:30px;
+padding:5px 0px;
+}
+
+table.ranking tr td
+{
+padding-left:4px;
+}
+table.ranking th
+{
+padding-left:4px;
+text-align:left;
+color:#0c4c6a;
+background-color:none;
+font-size:11pt;
+}
+table.ranking a
+{
+    color:#0c4c6a;
+    padding:0px;
+    margin:0px;
+    display:block;
+    text-decoration: underline;
+}
+table.ranking a:hover
+{
+
+    text-decoration: underline;
+}
+.odd
+{
+
+background-color:white;
+}
+
+.odd td
+{
+border-top:1px solid #0c4c6a;
+border-bottom:1px solid #0c4c6a;
+}
+.even
+{
+background-color:none;
+}
+
+
+
+#footer
+{
+    width: 100%;
+    background-color: #0d6fa0;
+    height: 60px;
+    position:relative;
+    display:block;
+    margin:0px !important;
+    border-top:1px solid #0d6fa0;
+}
+#footer p
+{
+    color:white;
+    text-align:center;
+    width:100%;
+}
+.tab{
+    position:absolute;
+    bottom:1px;
+    right:0px;
+    float:right;
+
+}
+.tab .active
+{
+    height:35px;
+    width:192px;
+    background:url(images/tab-background_active.png);
+    background-repeat: no-repeat;
+    float:left;
+
+}
+
+.tab .active a
+{
+    display: block;
+    color:#0c4c6a;
+    height:181px;
+    width:90%;
+    font-weight:bold;
+    font-size: 17px;
+    text-align: right;
+    padding-top:11px;
+    padding-right:10%;
+
+}
+.tab .active .first
+{
+
+}
+
+
+
+
+
+#table_titles
+{
+
+
+    position:relative;
+    width:906px;
+
+    z-index:100000;
+}
+#table_titles tr th
+{
+    background-color:#0d6fa0;
+    color:white;
+}
+
+#table_titles tr th a
+{
+    text-decoration: none;
+    color:white;
+}
+
+
+.specialordertitle td{
+    background-color:#ff972c;
+/*    border-top:1px solid black;*/
+  font-weight:bold;
+
+}
+
+
+
+
+
+
+
+
+
+
+#message a
+{
+        /* display: block before hiding */
+        display: block;
+        display: none;
+
+        /* link is above all other elements */
+        z-index: 999;
+
+        /* link doesn't hide text behind it */
+        opacity: .8;
+
+        /* link stays at same place on page */
+        position: fixed;
+
+        /* link goes at the bottom of the page */
+        top: 100%;
+        margin-top: -80px; /* = height + preferred bottom margin */
+
+        /* link is centered */
+        left: 50%;
+        margin-left: -160px; /* = half of width */
+
+        /* round the corners (to your preference) */
+        -moz-border-radius: 24px;
+        -webkit-border-radius: 24px;
+
+        /* make it big and easy to see (size, style to preferences) */
+        width: 300px;
+        line-height: 48px;
+        height: 48px;
+        padding: 10px;
+        background-color: #000;
+        font-size: 24px;
+        text-align: center;
+        color: #fff;
+}
+
+
+.rulelist
+{
+    margin-left:40px;
+   margin-bottom:30px;
+
+    width:550px;
+}
+
+.rulelist li
+{
+    margin-top:20px;
+}
+
+
+
+/* LISTSTYLING */
+
+th.fifthcolumn,
+td.fifthcolumn
+
+{
+    text-align:right !important;
+   padding-right:10px;
+}
+
+table.ranking a:link
+{
+    text-decoration:underline !important;
+}
+
+
+
+tr.rankingentry:nth-child(odd) td
+{
+    background-color:white;
+    border-bottom:1px solid rgb(12, 76, 106);
+    border-top:1px solid rgb(12, 76, 106);
+}
+
+pre {
+   white-space: pre-wrap;       /* css-3 */
+   white-space: -moz-pre-wrap !important;  /* Mozilla, since 1999 */
+   white-space: -pre-wrap;       /* Opera 4-6 */
+   white-space: -o-pre-wrap;       /* Opera 7 */
+   word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}
+
+.three-columns
+{
+    width:33%;
+    height:150px;
+    float:left;
+    margin-bottom:30px;
+    position:relative;
+    display:block;
+
+}

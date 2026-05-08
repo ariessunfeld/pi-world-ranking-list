@@ -1,0 +1,23 @@
+---
+import Layout from "../../components/Layout.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import { loadLinks } from "../../lib/data";
+
+const links = loadLinks();
+---
+
+<Layout title="Links" description="Related links from the Pi World Ranking List archive." path="/links/">
+  <Breadcrumbs items={[{ label: "Links" }]} />
+  <section class="content container">
+    <h1>Links</h1>
+    <p class="lead">Related public links imported from the archived site.</p>
+    <div class="link-grid">
+      {links.map((link) => (
+        <a class="item-card" href={link.url}>
+          <h3>{link.title}</h3>
+          {link.description && <p>{link.description}</p>}
+        </a>
+      ))}
+    </div>
+  </section>
+</Layout>

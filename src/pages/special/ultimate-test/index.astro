@@ -1,0 +1,28 @@
+---
+import Layout from "../../../components/Layout.astro";
+import Breadcrumbs from "../../../components/Breadcrumbs.astro";
+import { loadSpecialPages } from "../../../lib/data";
+import { withBase } from "../../../lib/urls";
+
+const page = loadSpecialPages().find((item) => item.id === "ultimate-test");
+const entry = page?.entries[0];
+---
+
+<Layout title="The Ultimate Test of Pi" description="The Ultimate Test of Pi historical page." path="/special/ultimate-test/">
+  <Breadcrumbs items={[{ label: "Lists", href: "/lists/" }, { label: "Ultimate Test" }]} />
+  <section class="content narrow">
+    <h1>The Ultimate Test of Pi</h1>
+    <p class="lead">
+      On 7 September 2002 in Dessau, Germany, Jan van Koningsveld passed the Ultimate
+      Test of Pi for the first 1,000 decimal places.
+    </p>
+    <div class="item-card">
+      <h2>{entry?.name}</h2>
+      <p>
+        {entry?.notes} Time: {entry?.time}. Date: {entry?.date}.
+      </p>
+    </div>
+    <img src={withBase("/images/ultimate.JPG")} alt="Jan van Koningsveld during his record attempt" />
+    <p class="meta">Source: <a href={page?.source_url}>{page?.source_url}</a></p>
+  </section>
+</Layout>

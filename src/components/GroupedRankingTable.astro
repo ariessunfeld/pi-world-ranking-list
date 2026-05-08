@@ -1,0 +1,73 @@
+---
+import type { RankedRecord } from "../lib/types";
+
+const { groups, caption } = Astro.props as {
+  groups: Array<{ group: string; records: RankedRecord[] }>;
+  caption: string;
+};
+---
+
+<section class="grouped-ranking-widget" data-grouped-widget>
+  <div class="toolbar">
+    <div class="field">
+      <label for="grouped-search">Search grouped rankings</label>
+      <input id="grouped-search" data-group-search type="search" autocomplete="off" />
+    </div>
+    <p class="meta">{groups.length.toLocaleString()} groups</p>
+  </div>
+  {
+    groups.map((group) => (
+      <section class="group-section" data-group-section>
+        <div class="group-heading">
+          <h2>{group.group}</h2>
+          <span class="meta">{group.records.length.toLocaleString()} records</span>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <caption>{caption}: {group.group}</caption>
+            <thead>
+              <tr>
+                <th scope="col">Rank</th>
+                <th scope="col">Name</th>
+                <th scope="col">Digits</th>
+                <th scope="col">Date</th>
+                <th scope="col">Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              {group.records.map((record) => (
+                <tr data-group-row data-search={`${group.group} ${record.display_name} ${record.digits} ${record.date_text} ${record.notes}`.toLocaleLowerCase()}>
+                  <td class="rank-cell">{record.rank}</td>
+                  <td>{record.display_name}</td>
+                  <td class="digits-cell">{record.digits.toLocaleString()}</td>
+                  <td>{record.date_text || "unknown"}</td>
+                  <td class="notes-cell">{record.notes}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+    ))
+  }
+</section>
+
+<script>
+  document.querySelectorAll("[data-grouped-widget]").forEach((widget) => {
+    const input = widget.querySelector("[data-group-search]") as HTMLInputElement | null;
+    const sections = Array.from(widget.querySelectorAll("[data-group-section]")) as HTMLElement[];
+    input?.addEventListener("input", () => {
+      const term = input.value.trim().toLocaleLowerCase();
+      sections.forEach((section) => {
+        const rows = Array.from(section.querySelectorAll("[data-group-row]")) as HTMLElement[];
+        let visible = 0;
+        rows.forEach((row) => {
+          const match = !term || (row.dataset.search ?? "").includes(term);
+          row.hidden = !match;
+          if (match) visible += 1;
+        });
+        section.hidden = visible === 0;
+      });
+    });
+  });
+</script>

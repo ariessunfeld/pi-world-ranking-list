@@ -1,0 +1,8 @@
+---
+import { withBase } from "../lib/urls";
+---
+
+<div class="button-row" aria-label="Data downloads">
+  <a class="button" href={withBase("/data/records.csv")}>Download CSV</a>
+  <a class="button" href={withBase("/data/records.json")}>Download JSON</a>
+</div>

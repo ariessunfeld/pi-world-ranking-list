@@ -1,0 +1,166 @@
+pages:
+  - id: amazing-performances
+    title: Amazing Performances
+    source_url: https://www.pi-world-ranking-list.com/index.php?page=amazing
+    body: >-
+      Sim Pohann of Malaysia recited the first 67,053 digits of Pi with just 15 errors on 14 April
+      1999. It took him 15 hours and 15 minutes. Dr. Yip Swe Chooi, also of Malaysia, Grandmaster of
+      Memory, recited the first 60,000 digits of Pi with just 44 errors on 25 July 1998. It took him
+      14 hours. Unfortunately both error lists are lost, so the exact positions of the first errors
+      made are unknown. Therefore, both performances are no world records according to the Pi World
+      Ranking List or the 'Guinness Book of Records'. OTHER AMAZING PERFORMANCES : Dave Turner
+      recited the first 1,250 digits of Pi both forwards and backwards on 05 July 2005. James Smith
+      from Australia recited the first 3,000 digits of Pi both forwards and backwards on 24 April
+      2014. It took him 1 h 45 min forwards and 2 h 48 min backwards.
+    entries:
+      - name: Sim Pohann
+        digits: '67053'
+        date: '1999-04-14'
+        notes: Recited with 15 errors; not a world record because exact error positions are unknown.
+      - name: Dr. Yip Swe Chooi
+        digits: '60000'
+        date: '1998-07-25'
+        notes: Recited with 44 errors; not a world record because exact error positions are unknown.
+      - name: Dave Turner
+        digits: '1250'
+        date: '2005-07-05'
+        notes: Recited digits forwards and backwards.
+      - name: James Smith
+        digits: '3000'
+        date: '2014-04-24'
+        notes: Recited digits forwards and backwards.
+  - id: pi-matrix
+    title: Pi Matrix Records
+    source_url: https://www.pi-world-ranking-list.com/index.php?page=matrix
+    body: >-
+      Rules : Each line of PI is numbered and there are 50 digits on each line in blocks of five.
+      The candidate is given a number of a line of PI and then has to either recite the line forward
+      or backwards. Or he will be asked to name a certain digit on that line. He also may have to
+      multiply two certain digits on different lines. The candidate has to answer 50 tests and get
+      them all correct. On 09 October 1999, Creighton Carvello of England was able to pass all these
+      tests on the first 10,050 digits of PI. His attempt took place at the Royal Holloway,
+      University of London, Egham, Surrey, England. Two official witnesses were present. The
+      following performances have not yet been verified : G. Uday Shankar, 7,000 digits Bishwaroop
+      Roy Chowdhury, 4,200 digits Professor Aitkin, 2,000 digits EVEREST OF MEMORY TESTS Rules : The
+      first 10,000 digits of Pi are divided into 2,000 5-digit blocks. The testers call out one of
+      these 5-digit sequences, and the candidate must reply with the 5-digit numbers on either side
+      of the number chosen. This happens 50 times. Ranking List: 1 Lars Christiansen 15 March 2024
+      13 min 34,77 sec World Record 2024 2 Martin Nilsson 05 October 2019 14 min 33.60 sec World
+      Record 2019 3 Kevin Horsley 14 March 2013 16 min 38.35 sec World Record 2013 4 Mark A. Nissen
+      29 March 2019 16 min 51 sec 5 Mats Bergsten 12 February 2008 17 min 39 sec World Record 2008 6
+      Jan Harms 27 July 2007 20 min 30 sec World Record 2007 7 Philip Bond 28 June 2004 29 min 51
+      sec World Record 2004 8 Kevin Horsley 28 Aug 1999 39 min World Record 1999 9 Philip Bond 18
+      May 1994 53 min World Record 1994 OLYMPUS MONS OF MEMORY TESTS Rules : The first 100,000
+      digits of Pi are divided into 1,000 pages, containing 10 rows with 9 digits and 1 row with 10
+      digits each. The testers call out one of these 9- or 10-digit sequences, and the candidate
+      must reply with the 9- or 10-digit numbers on either side of the number chosen. This happens
+      50 times. Jonas von Essen from Sweden was the first to pass this test on 10 March 2020 in a
+      time of 33 minutes and 00,63 seconds.
+    entries:
+      - name: Creighton Carvello
+        digits: '10050'
+        date: '1999-10-09'
+        notes: Passed all Pi Matrix tests on first 10,050 digits.
+      - rank: 1
+        name: Lars Christiansen
+        date: '2024-03-15'
+        time: 13 min 34,77 sec
+        notes: World Record 2024
+      - rank: 2
+        name: Martin Nilsson
+        date: '2019-10-05'
+        time: 14 min 33.60 sec
+        notes: World Record 2019
+      - rank: 3
+        name: Kevin Horsley
+        date: '2013-03-14'
+        time: 16 min 38.35 sec
+        notes: World Record 2013
+      - rank: 4
+        name: Mark A. Nissen
+        date: '2019-03-29'
+        time: 16 min 51 sec
+        notes: ''
+      - rank: 5
+        name: Mats Bergsten
+        date: '2008-02-12'
+        time: 17 min 39 sec
+        notes: World Record 2008
+      - rank: 6
+        name: Jan Harms
+        date: '2007-07-27'
+        time: 20 min 30 sec
+        notes: World Record 2007
+      - rank: 7
+        name: Philip Bond
+        date: '2004-06-28'
+        time: 29 min 51 sec
+        notes: World Record 2004
+      - rank: 8
+        name: Kevin Horsley
+        date: '1999-08-28'
+        time: 39 min
+        notes: World Record 1999
+      - rank: 9
+        name: Philip Bond
+        date: '1994-05-18'
+        time: 53 min
+        notes: World Record 1994
+  - id: ultimate-test
+    title: The Ultimate Test of Pi
+    source_url: https://www.pi-world-ranking-list.com/index.php?page=ultimate
+    body: >-
+      On 07 September 2002, during the World Record Festival in Dessau, Germany, Jan van Koningsveld
+      of Germany was the first to ever pass one of the most difficult tests ever, THE ULTIMATE TEST
+      OF PI . Rules (German) His attempt was for the first 1,000 decimal places and he answered all
+      of the 30 questions correctly. He needed 51 minutes and 40 seconds. Jan van Koningsveld (left)
+      during his record attempt
+    entries:
+      - name: Jan van Koningsveld
+        digits: '1000'
+        date: '2002-09-07'
+        time: 51 min 40 sec
+        notes: Answered all 30 Ultimate Test of Pi questions correctly.
+  - id: pi-permutation
+    title: The Pi Permutation
+    source_url: https://www.pi-world-ranking-list.com/index.php?page=pi-permutation
+    body: >-
+      Explanation: The Pi Permutation p (N, n, k) N: Know the first N digits of Pi. N is a multiple
+      of 10, and we admit N = 10, N = 100, N = 5,000, N = 10,000. Example N = 10: Know the sequence
+      1415926535. n: The task is to know n digits which are chosen at random. We admit n = 1, n = 2,
+      and n = 10. Example n = 1: What is the digit no. 4? Answer: 5. Example n = 2: What is the
+      double-digit no. 4? Answer: 65. Example n = 10: What is the ten-digit no. 4? Answer:
+      5028841971. k: The number of questions to be answered. For N = 10 we admit only n = 1 and k =
+      10. For N = 100 we admit n = 1 and k = 10 or k = 100. For N = 5,000 we admit n = 1, k = 10, k
+      = 100, k = 500 / n = 2, k = 10, k = 100, k = 2,500 / n = 10, k = 10, k = 100, k = 500. For N =
+      10,000 we admit n = 1, k = 10, k = 100, k = 10,000 / n = 2, k = 10, k = 100, k = 5,000 / n =
+      10, k = 10, k = 100, k = 1,000. Offline: This memory sport uses a software which you can
+      download for free on www.piworld.de. The count of the digits can be chosen to your liking from
+      1 or from 0. For every question you are allowed one mistake, but not two mistakes. The mistake
+      must be corrected immediately. Sport: The overall time needed to accomplish p (N,n,k) counts.
+
+
+      Records: Records offline: P (N = 5,000, n = 2, k = 2,500) Ulrich Voigt, 2002, June 28 in
+      Matthias-Claudius Gymnasium in Hamburg-Wandsbek. Time: 6h 5m. Ulrich Voigt, 2003, June 30 in
+      Matthias-Claudius Gymnasium in Hamburg-Wandsbek. Time: 5h 40m. P (N = 100, n = 1, k = 100)
+      Ulrich Voigt, 2006, Nov. 6 in Mathematicum Giessen at the Mental Calculation World Cup. Time:
+      48,43 s. Ulrich Voigt, 2006, Nov. 6 in Mathematicum Giessen at the mental calculation
+      worls-championship. Time: 48,43 s. Ulrich Voigt, 2009, July 31, University Hamburg at the
+      German Memory Championships. Time: 44.25s Ulrich Voigt, 2011, April 12 in Matthias-Claudius
+      Gymnasium in Hamburg-Wandsbek. Time: 42.14s. Ulrich Voigt, 2011, July 10 in RenMin DaXue,
+      Beijing at the end of a lecture "From Matteo Ricci to modern Memory Sport". Time: 41.14s.
+      Ulrich Voigt, 2011, Sep. 24 in Rome at the Speed Memory Championships. Time: 39.42s. Ulrich
+      Voigt, 2013, October 6 in Lisboa at the Speed Memory World Championships. Time: 38.86s. Fabian
+      Saal, 2015, May 23, in Wuerzburg, Germany, at the Sueddeutsche Gedaechtnismeisterschaft. Time:
+      35.88 seconds Online: The "best 20" for these disciplines you can find on www.pi-sport.eu. You
+      can register on this page and get a ranking. On this website you find more detailed
+      information in several languages.
+    entries:
+      - name: Ulrich Voigt
+        date: '2002-06-28'
+        discipline: P(N=5000, n=2, k=2500)
+        time: 6h 5m
+      - name: Fabian Saal
+        date: '2015-05-23'
+        discipline: P(N=100, n=1, k=100)
+        time: 35.88 seconds

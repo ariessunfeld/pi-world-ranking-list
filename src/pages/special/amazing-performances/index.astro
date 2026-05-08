@@ -1,0 +1,37 @@
+---
+import Layout from "../../../components/Layout.astro";
+import Breadcrumbs from "../../../components/Breadcrumbs.astro";
+import { loadSpecialPages } from "../../../lib/data";
+
+const page = loadSpecialPages().find((item) => item.id === "amazing-performances");
+---
+
+<Layout title="Amazing Performances" description="Historical Pi performances outside normal ranking rules." path="/special/amazing-performances/">
+  <Breadcrumbs items={[{ label: "Lists", href: "/lists/" }, { label: "Amazing Performances" }]} />
+  <section class="content narrow">
+    <h1>Amazing Performances</h1>
+    <p class="lead">
+      Historical public performances preserved from the old site. These are intentionally separate
+      from normal rankings because they include known errors or nonstandard formats.
+    </p>
+    <div class="table-wrap">
+      <table>
+        <caption>Imported amazing performances</caption>
+        <thead>
+          <tr><th>Name</th><th>Digits</th><th>Date</th><th>Notes</th></tr>
+        </thead>
+        <tbody>
+          {page?.entries.map((entry) => (
+            <tr>
+              <td>{entry.name}</td>
+              <td class="digits-cell">{entry.digits}</td>
+              <td>{entry.date}</td>
+              <td>{entry.notes}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <p class="meta">Source: <a href={page?.source_url}>{page?.source_url}</a></p>
+  </section>
+</Layout>

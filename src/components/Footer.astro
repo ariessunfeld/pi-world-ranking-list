@@ -1,0 +1,23 @@
+---
+import { withBase } from "../lib/urls";
+
+const buildDate = new Date().toISOString().slice(0, 10);
+---
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <strong>Pi World Ranking List</strong>
+      <p>
+        A maintained public ranking archive generated from canonical data files. Private
+        verification evidence is intentionally kept out of this public repository.
+      </p>
+      <p>Last build: {buildDate}</p>
+    </div>
+    <div class="button-row">
+      <a class="button" href={withBase("/data/records.csv")}>CSV data</a>
+      <a class="button" href={withBase("/data/records.json")}>JSON data</a>
+      <a class="button" href="https://github.com/ariessunfeld/pi-world-ranking-list">GitHub</a>
+    </div>
+  </div>
+</footer>

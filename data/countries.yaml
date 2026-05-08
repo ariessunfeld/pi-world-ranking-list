@@ -1,0 +1,173 @@
+countries:
+  - name: Algeria
+    continent: Africa
+  - name: Argentina
+    continent: South America
+  - name: Australia
+    continent: Australia
+  - name: Austria
+    continent: Europe
+  - name: Azerbaijan
+    continent: Asia
+  - name: Bangladesh
+    continent: Asia
+  - name: Belarus
+    continent: Europe
+  - name: Belgium
+    continent: Europe
+  - name: Bosnia and Herzigovina
+    continent: Europe
+  - name: Brazil
+    continent: South America
+  - name: British Overseas Territories
+    continent: North America
+  - name: Bulgaria
+    continent: Europe
+  - name: Canada
+    continent: North America
+  - name: Chile
+    continent: South America
+  - name: China
+    continent: Asia
+  - name: Colombia
+    continent: South America
+  - name: Croatia
+    continent: Europe
+  - name: Cuba
+    continent: South America
+  - name: Czech Republic
+    continent: Europe
+  - name: Denmark
+    continent: Europe
+  - name: Egypt
+    continent: Africa
+  - name: Estonia
+    continent: Europe
+  - name: Ethiopia
+    continent: Africa
+  - name: Finland
+    continent: Europe
+  - name: France
+    continent: Europe
+  - name: Germany
+    continent: Europe
+  - name: Great Britain
+    continent: Europe
+  - name: Greece
+    continent: Europe
+  - name: Honduras
+    continent: North America
+  - name: Hong Kong
+    continent: Asia
+  - name: Hungary
+    continent: Europe
+  - name: India
+    continent: Asia
+  - name: Indonesia
+    continent: Asia
+  - name: Iraq
+    continent: Asia
+  - name: Ireland
+    continent: Europe
+  - name: Israel
+    continent: Asia
+  - name: Italy
+    continent: Europe
+  - name: Japan
+    continent: Asia
+  - name: Jordan
+    continent: Asia
+  - name: Kenya
+    continent: Africa
+  - name: Lebanon
+    continent: Asia
+  - name: Lithuania
+    continent: Europe
+  - name: Malaysia
+    continent: Asia
+  - name: Maldives
+    continent: Asia
+  - name: Mexico
+    continent: North America
+  - name: Morocco
+    continent: Africa
+  - name: Namibia
+    continent: Africa
+  - name: Nepal
+    continent: Asia
+  - name: Netherlands
+    continent: Europe
+  - name: New Zealand
+    continent: Australia
+  - name: Niger
+    continent: Africa
+  - name: Nigeria
+    continent: Africa
+  - name: Norway
+    continent: Europe
+  - name: Oman
+    continent: Asia
+  - name: Pakistan
+    continent: Asia
+  - name: Palestine
+    continent: Asia
+  - name: Papua New Guinea
+    continent: Australia
+  - name: Peru
+    continent: South America
+  - name: Philippines
+    continent: Asia
+  - name: Poland
+    continent: Europe
+  - name: Portugal
+    continent: Europe
+  - name: Russia
+    continent: Europe
+  - name: Scotland
+    continent: Europe
+  - name: Serbia
+    continent: Europe
+  - name: Singapore
+    continent: Asia
+  - name: Slovakia
+    continent: Europe
+  - name: South Africa
+    continent: Africa
+  - name: South Korea
+    continent: Asia
+  - name: Spain
+    continent: Europe
+  - name: Sri Lanka
+    continent: Asia
+  - name: Sudan
+    continent: Africa
+  - name: Sweden
+    continent: Europe
+  - name: Switzerland
+    continent: Europe
+  - name: Syria
+    continent: Asia
+  - name: Taiwan
+    continent: Asia
+  - name: Tanzania
+    continent: Africa
+  - name: Thailand
+    continent: Asia
+  - name: Turkey
+    continent: Europe
+  - name: Ukraine
+    continent: Europe
+  - name: United Arab Emirates
+    continent: Asia
+  - name: United Kingdom
+    continent: Europe
+  - name: Uruguay
+    continent: South America
+  - name: USA
+    continent: North America
+  - name: Venezuela
+    continent: South America
+  - name: Vietnam
+    continent: Asia
+  - name: Yemen
+    continent: Asia

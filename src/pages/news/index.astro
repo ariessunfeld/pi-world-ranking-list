@@ -1,0 +1,30 @@
+---
+import Layout from "../../components/Layout.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+---
+
+<Layout title="News" description="Pi World Ranking List news and migration notes." path="/news/">
+  <Breadcrumbs items={[{ label: "News" }]} />
+  <section class="content narrow">
+    <h1>News</h1>
+    <h2>Migration Note</h2>
+    <p>
+      This repository is a static rebuild of the public site. The archived live site announced that
+      the Pi World Ranking List was on hold; that status is preserved here until Ari reviews and
+      updates the public process.
+    </p>
+
+    <h2>Announcement From The Archived Site</h2>
+    <p>
+      The old site announced plans for a book about members of the Pi World Ranking List and invited
+      interested members to contact the maintainer.
+    </p>
+
+    <h2>The Pi World Ranking List Is Back Online</h2>
+    <p>
+      The old news page noted that the lists were simplified to make updates easier and that photos
+      would usually no longer be published. It also stated that age classifications such as youngest
+      or oldest person on the list would no longer be maintained.
+    </p>
+  </section>
+</Layout>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ariessunfeld.github.io/pi-world-ranking-list/sitemap-index.xml

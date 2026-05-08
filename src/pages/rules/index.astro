@@ -1,0 +1,49 @@
+---
+import Layout from "../../components/Layout.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import { withBase } from "../../lib/urls";
+---
+
+<Layout title="Rules and Registration" description="Rules and registration instructions for public ranking submissions." path="/rules/">
+  <Breadcrumbs items={[{ label: "Rules" }]} />
+  <section class="content narrow">
+    <h1>Rules and Registration</h1>
+    <p class="lead">
+      These rules preserve the public rules from the archived site. Private evidence should be sent
+      only through the maintainer's private process, not committed to this repository.
+    </p>
+
+    <ol class="rulelist">
+      <li>All listed conditions must be fulfilled.</li>
+      <li>
+        Previous performances may be entered if they follow the rules. The minimum number of digits
+        is 20. Digits are decimal places only and do not include the leading 3.
+      </li>
+      <li>Complete the public registration form after the performance.</li>
+      <li>At least two witnesses must sign the form to verify the performance.</li>
+      <li>Each witness must be at least 18 years old.</li>
+      <li>The witnesses must be independent and not related to the performer.</li>
+      <li>Each witness must give full name and address and sign the form.</li>
+      <li>A photo may be included as part of confirmation and is published only on request.</li>
+      <li>If there is doubt, additional information may be requested or the registration may be rejected.</li>
+      <li>
+        Performances of 10,000 digits or more must also be certified by an academic, scientific, or
+        official witness such as a lawyer, notary, or minister.
+      </li>
+      <li>The rules may be modified if necessary to keep the list authentic.</li>
+      <li>Personal information is used to confirm performances and should not be used otherwise.</li>
+      <li>Legal action is excluded.</li>
+    </ol>
+
+    <h2>Registration Steps</h2>
+    <ol>
+      <li>After the performance, fill in the form according to the rules.</li>
+      <li>Contact the maintainer to report the performance.</li>
+      <li>The maintainer provides the private address or storage location for evidence.</li>
+    </ol>
+    <div class="button-row">
+      <a class="button" href={withBase("/legacy-form/index.html")}>Legacy public form</a>
+      <a class="button" href="https://github.com/ariessunfeld/pi-world-ranking-list/blob/main/docs/private-evidence-policy.md">Private evidence policy</a>
+    </div>
+  </section>
+</Layout>

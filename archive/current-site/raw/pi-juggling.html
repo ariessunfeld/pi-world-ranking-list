@@ -1,0 +1,235 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8">
+<title></title>
+<link rel="stylesheet" type="text/css" href="css-20120331.css" />
+<link rel="stylesheet" type="text/css" href="jquery/halftone/styles.css" />
+<script type="text/javascript" src="jquery/jquery-1.5.1.min.js"></script>
+<script type="text/javascript" src="jquery/jquery-ui-1.8.11.custom.min.js"></script>
+<script type="text/javascript" src="jquery/jquery.tablesorter.min.js"></script>
+<script type="text/javascript" src="jquery/jquery.fixed.js"></script>
+<!--<script type="text/javascript" src="jquery/halftone/script.js"></script>-->
+
+
+
+
+
+<script type="text/javascript" src="pnotify/jquery.pnotify.min.js"></script>
+<link href="pnotify/jquery.pnotify.default.css" media="all" rel="stylesheet" type="text/css" />
+<!-- Include this file if you are using Pines Icons. -->
+<!--<link href="pnotify/jquery.pnotify.default.icons.css" media="all" rel="stylesheet" type="text/css" />-->
+<style>
+.ui-pnotify-container {
+    background: #0d6f9f !important;
+    border: 2px solid #ebf4f9 !important;
+    color: #fff !important;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5) !important;
+}
+.ui-pnotify-title {
+    font-size: 14px !important;
+    color: #ff972c !important; /* using the orange color from the design */
+    margin-bottom: 8px !important;
+}
+.ui-pnotify-closer, .ui-pnotify-icon {
+    display: none !important; /* hide default broken icons */
+}
+/* custom close button */
+.custom-pnotify-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: arial, sans-serif;
+}
+.custom-pnotify-close:hover {
+    color: #ff972c;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function() {
+    if (!sessionStorage.getItem('pi_hold_closed')) {
+        $.pnotify.defaults.styling = "jqueryui";
+        $.pnotify.defaults.history = false;
+        var notice = $.pnotify({
+            title: 'Notice',
+            text: '<div style="font-size: 12px; line-height: 1.4;">Dear all, as many of you have already noticed, the Pi World Ranking List is currently on hold.<br><br>We sincerely apologize for this and hope that the circumstances will change in the future so that the Pi World Ranking List can be reactivated.<br><br>Thank you very much for your patience and understanding.</div>',
+            hide: false,
+            closer: false, /* disable default closer to use custom one */
+            closer_hover: false,
+            sticker: false
+        });
+        
+        // Add custom text-based close button
+        var closeBtn = $('<div class="custom-pnotify-close">X</div>');
+        notice.append(closeBtn);
+        
+        closeBtn.click(function() {
+            notice.pnotify_remove();
+            sessionStorage.setItem('pi_hold_closed', 'true');
+        });
+    }
+});
+</script>
+
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  // tracker methods like "setCustomDimension" should be called before "trackPageView"
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stat.designerstube.de/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', '2']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+
+</head>
+
+<body class="body">
+
+
+    <div id="top-banner"> </div>
+<div id="seite">
+﻿
+ 
+
+<div id="header">
+
+<div id="menue">
+    <div id="navigation">
+<ul>
+  <li class=" home "><a class="contact" href="index.php?page=home">Home</a></li>
+  <li class="news "><a href="index.php?page=news">News</a></li>
+  <li><a href="index.php?page=listoverview">Lists</a></li>
+  <li class="rules "><a href="index.php?page=rules">Rules</a></li>
+  <li class="background "><a href="index.php?page=background">Background</a></li>
+  <li><a href="index.php?page=links">Links</a></li>
+</ul>
+</div>
+</div>
+   <div class='tab'><div class='active'><a href='index.php?page=lists&category=pi'>Pi-Ranking</a></div><div class='active'><a href='index.php?page=lists&category=e'>e-Ranking</a></div><div class='active'><a href='index.php?page=lists&category=sqrt2'>Sqrt(2)-Ranking</a></div></div>    
+     <div id="stage">
+    <!-- The dot divs are shown here -->
+    </div>
+</div>
+
+
+<div class="clear"></div>
+
+    <div id="content">
+    <div id="title">
+<h2>
+Lists
+</h2>
+
+   
+
+
+
+</div>
+
+<div id="contentinner">
+
+<p class="subtitle">Pi World Ranking List - Juggling List </p>
+<p style="font-size:11pt;"><b>You can sort the list by ranking, last name, country and continent by clicking on the title of that column.</b> To change the ascending/descending sorting please click the title of the column again.
+   If you scroll down, the title bar will stay at the top of the viewport, so you can change the sorting at any time.</p>
+<table width="100%" border="0" cellpadding="0" cellspacing="0" id="ranking" class="ranking">
+    <thead  id="table_titles" >
+ <tr>
+  <th class='firstcolumn'><a href="index.php?page=lists&category=pi&asc=false&juggling=1&sort=digits">Ranking</a> </th>
+  <th class='secondcolumn'><a href="index.php?page=lists&category=pi&asc=false&juggling=1&sort=name">Name</a></th>
+  <th class='thirdcolumn'><a href="index.php?page=lists&category=pi&asc=true&juggling=1&sort=country">Country</a></th>
+  <th class='fourthcolumn'><a href="index.php?page=lists&category=pi&asc=true&juggling=1&sort=continent">Continent</a></th>
+  <th class='fifthcolumn'>Digits </th>
+  <th class='sixthcolumn'>Date </th>
+  <th class='seventhcolumn'>Notes </th>
+
+ </tr>
+ </thead>
+ 
+ <tbody>
+    
+<tr class='rankingentry'>  <td class='firstcolumn ranking'>1&nbsp; </td>  <td class='secondcolumn name'>Bergsten, Mats&nbsp;  </td><td class='thirdcolumn country'>Sweden&nbsp; </td><td class='fourthcolumn continent'>Europe&nbsp; </td><td class='fifthcolumn digits'>&nbsp;9778</td><td class='sixthcolumn date'>21 March 2005&nbsp; </td>  <td class='seventhcolumn notes'><a href='http://www.pi-world-ranking-list.com/lists/details/bergsten.html' target='_blank' style='display:inline;'>Swedish Record  1991-1999</a>&nbsp; </td> </tr> <tr class='rankingentry'>  <td class='firstcolumn ranking'>2&nbsp; </td>  <td class='secondcolumn name'>Busboom, Gerold&nbsp;  </td><td class='thirdcolumn country'>Germany&nbsp; </td><td class='fourthcolumn continent'>Europe&nbsp; </td><td class='fifthcolumn digits'>&nbsp;2016</td><td class='sixthcolumn date'>12 March 2016&nbsp; </td>  <td class='seventhcolumn notes'>2nd Pi Day in Emden/while juggling 3 balls
+&nbsp; </td> </tr> <tr class='rankingentry'>  <td class='firstcolumn ranking'>3&nbsp; </td>  <td class='secondcolumn name'>Lietzow, Andreas&nbsp;  </td><td class='thirdcolumn country'>Germany&nbsp; </td><td class='fourthcolumn continent'>Europe&nbsp; </td><td class='fifthcolumn digits'>&nbsp;1088</td><td class='sixthcolumn date'>14 December 2003&nbsp; </td>  <td class='seventhcolumn notes'><a href='http://www.pi-world-ranking-list.com/lists/details/lietzow.html' target='_blank' style='display:inline;'>while juggling three/five balls</a>&nbsp; </td> </tr> <tr class='rankingentry'>  <td class='firstcolumn ranking'>4&nbsp; </td>  <td class='secondcolumn name'>Weidenhöfer, Georg&nbsp;  </td><td class='thirdcolumn country'>Germany&nbsp; </td><td class='fourthcolumn continent'>Europe&nbsp; </td><td class='fifthcolumn digits'>&nbsp;905</td><td class='sixthcolumn date'>10 March 2023&nbsp; </td>  <td class='seventhcolumn notes'>5 min, while juggling 3 balls; 6th Pi Day in Emden&nbsp; </td> </tr> <tr class='rankingentry'>  <td class='firstcolumn ranking'>5&nbsp; </td>  <td class='secondcolumn name'>Derksen, Eric&nbsp;  </td><td class='thirdcolumn country'>Canada&nbsp; </td><td class='fourthcolumn continent'>North America&nbsp; </td><td class='fifthcolumn digits'>&nbsp;805</td><td class='sixthcolumn date'>14 March 2023&nbsp; </td>  <td class='seventhcolumn notes'>8 min; while juggling 3 balls&nbsp; </td> </tr> <tr class='rankingentry'>  <td class='firstcolumn ranking'>6&nbsp; </td>  <td class='secondcolumn name'>Cragg, Alexander&nbsp;  </td><td class='thirdcolumn country'>USA&nbsp; </td><td class='fourthcolumn continent'>North America&nbsp; </td><td class='fifthcolumn digits'>&nbsp;475</td><td class='sixthcolumn date'>14 March 2024&nbsp; </td>  <td class='seventhcolumn notes'>while juggling 3 balls; dedicated to Jack&nbsp; </td> </tr> <tr class='rankingentry'>  <td class='firstcolumn ranking'>7&nbsp; </td>  <td class='secondcolumn name'>Spraker, Kiah&nbsp;  </td><td class='thirdcolumn country'>USA&nbsp; </td><td class='fourthcolumn continent'>North America&nbsp; </td><td class='fifthcolumn digits'>&nbsp;460</td><td class='sixthcolumn date'>11 June 2021&nbsp; </td>  <td class='seventhcolumn notes'>while juggling 3 balls&nbsp; </td> </tr> <tr class='rankingentry'>  <td class='firstcolumn ranking'>8&nbsp; </td>  <td class='secondcolumn name'>Hinton, Ray&nbsp;  </td><td class='thirdcolumn country'>USA&nbsp; </td><td class='fourthcolumn continent'>North America&nbsp; </td><td class='fifthcolumn digits'>&nbsp;415</td><td class='sixthcolumn date'>18 November 2008&nbsp; </td>  <td class='seventhcolumn notes'>while juggling 5 balls&nbsp; </td> </tr> <tr class='rankingentry'>  <td class='firstcolumn ranking'>9&nbsp; </td>  <td class='secondcolumn name'>Olayanju, Joshua&nbsp;  </td><td class='thirdcolumn country'>USA&nbsp; </td><td class='fourthcolumn continent'>North America&nbsp; </td><td class='fifthcolumn digits'>&nbsp;343</td><td class='sixthcolumn date'>15 March 2023&nbsp; </td>  <td class='seventhcolumn notes'>while juggling; 6 min&nbsp; </td> </tr> <tr class='rankingentry'>  <td class='firstcolumn ranking'>10&nbsp; </td>  <td class='secondcolumn name'>Dietl, Jakob&nbsp;  </td><td class='thirdcolumn country'>Germany&nbsp; </td><td class='fourthcolumn continent'>Europe&nbsp; </td><td class='fifthcolumn digits'>&nbsp;314</td><td class='sixthcolumn date'>14 March 2014&nbsp; </td>  <td class='seventhcolumn notes'>2 min 51 sec; while juggling&nbsp; </td> </tr> <tr class='rankingentry'>  <td class='firstcolumn ranking'>11&nbsp; </td>  <td class='secondcolumn name'>Lancaster, Ralph&nbsp;  </td><td class='thirdcolumn country'>New Zealand&nbsp; </td><td class='fourthcolumn continent'>Australia&nbsp; </td><td class='fifthcolumn digits'>&nbsp;246</td><td class='sixthcolumn date'>1 September 2016&nbsp; </td>  <td class='seventhcolumn notes'>1 min 51 sec / while juggling 3 balls&nbsp; </td> </tr> <tr class='rankingentry'>  <td class='firstcolumn ranking'>12&nbsp; </td>  <td class='secondcolumn name'>Krishnamoorthy, Mukkai&nbsp;  </td><td class='thirdcolumn country'>USA&nbsp; </td><td class='fourthcolumn continent'>North America&nbsp; </td><td class='fifthcolumn digits'>&nbsp;230</td><td class='sixthcolumn date'>19 October 2001&nbsp; </td>  <td class='seventhcolumn notes'><a href='http://www.cs.rpi.edu/~moorthy/moorthyjug.html' target='_blank' style='display:inline;'>while juggling three balls</a>&nbsp; </td> </tr> <tr class='rankingentry'>  <td class='firstcolumn ranking'>13&nbsp; </td>  <td class='secondcolumn name'>Zonker, Joshua&nbsp;  </td><td class='thirdcolumn country'>USA&nbsp; </td><td class='fourthcolumn continent'>North America&nbsp; </td><td class='fifthcolumn digits'>&nbsp;201</td><td class='sixthcolumn date'>11 March 2022&nbsp; </td>  <td class='seventhcolumn notes'>while juggling 3 balls; 1 min 4 sec&nbsp; </td> </tr> <tr class='rankingentry'>  <td class='firstcolumn ranking'>14&nbsp; </td>  <td class='secondcolumn name'>Bull, Michael&nbsp;  </td><td class='thirdcolumn country'>Great Britain&nbsp; </td><td class='fourthcolumn continent'>Europe&nbsp; </td><td class='fifthcolumn digits'>&nbsp;200</td><td class='sixthcolumn date'>2 February 2013&nbsp; </td>  <td class='seventhcolumn notes'>while juggling 3 balls&nbsp; </td> </tr> <tr class='rankingentry'>  <td class='firstcolumn ranking'>15&nbsp; </td>  <td class='secondcolumn name'>van Koningsveld, Jan&nbsp;  </td><td class='thirdcolumn country'>Germany&nbsp; </td><td class='fourthcolumn continent'>Europe&nbsp; </td><td class='fifthcolumn digits'>&nbsp;185</td><td class='sixthcolumn date'>14 March 2013&nbsp; </td>  <td class='seventhcolumn notes'>57 sec&nbsp; </td> </tr> <tr class='rankingentry'>  <td class='firstcolumn ranking'>16&nbsp; </td>  <td class='secondcolumn name'>Watkins, Rex&nbsp;  </td><td class='thirdcolumn country'>USA&nbsp; </td><td class='fourthcolumn continent'>North America&nbsp; </td><td class='fifthcolumn digits'>&nbsp;170</td><td class='sixthcolumn date'>1 October 2006&nbsp; </td>  <td class='seventhcolumn notes'>1 min; while juggling 3 balls&nbsp; </td> </tr> <tr class='rankingentry'>  <td class='firstcolumn ranking'>17&nbsp; </td>  <td class='secondcolumn name'>Freistetter, Florian&nbsp;  </td><td class='thirdcolumn country'>Austria&nbsp; </td><td class='fourthcolumn continent'>Europe&nbsp; </td><td class='fifthcolumn digits'>&nbsp;150</td><td class='sixthcolumn date'>28 June 2002&nbsp; </td>  <td class='seventhcolumn notes'><a href='http://www.pi-world-ranking-list.com/lists/details/stelterjustin.html' target='_blank' style='display:inline;'>while juggling three balls</a>&nbsp; </td> </tr> <tr class='rankingentry'>  <td class='firstcolumn ranking'>18&nbsp; </td>  <td class='secondcolumn name'>Haigh, Steve&nbsp;  </td><td class='thirdcolumn country'>Great Britain&nbsp; </td><td class='fourthcolumn continent'>Europe&nbsp; </td><td class='fifthcolumn digits'>&nbsp;121</td><td class='sixthcolumn date'>17 March 2019&nbsp; </td>  <td class='seventhcolumn notes'>1 min; while juggling 3 balls&nbsp; </td> </tr> <tr class='rankingentry'>  <td class='firstcolumn ranking'>19&nbsp; </td>  <td class='secondcolumn name'>Carlson, Russel&nbsp;  </td><td class='thirdcolumn country'>USA&nbsp; </td><td class='fourthcolumn continent'>North America&nbsp; </td><td class='fifthcolumn digits'>&nbsp;91</td><td class='sixthcolumn date'>13 March 2015&nbsp; </td>  <td class='seventhcolumn notes'>while juggling 3 balls&nbsp; </td> </tr> <tr class='rankingentry'>  <td class='firstcolumn ranking'>20&nbsp; </td>  <td class='secondcolumn name'>Cameron, James&nbsp;  </td><td class='thirdcolumn country'>USA&nbsp; </td><td class='fourthcolumn continent'>North America&nbsp; </td><td class='fifthcolumn digits'>&nbsp;65</td><td class='sixthcolumn date'>14 March 2013&nbsp; </td>  <td class='seventhcolumn notes'>30 sec / while juggling 3 balls&nbsp; </td> </tr> <tr class='rankingentry'>  <td class='firstcolumn ranking'>21&nbsp; </td>  <td class='secondcolumn name'>Bohnet, Evan&nbsp;  </td><td class='thirdcolumn country'>USA&nbsp; </td><td class='fourthcolumn continent'>North America&nbsp; </td><td class='fifthcolumn digits'>&nbsp;50</td><td class='sixthcolumn date'>14 April 2019&nbsp; </td>  <td class='seventhcolumn notes'>1 min; while juggling 3 balls&nbsp; </td> </tr><tr class='rankingentry'>  <td class='firstcolumn ranking'>21&nbsp; </td>  <td class='secondcolumn name'>Wilkerson, Kathy&nbsp;  </td><td class='thirdcolumn country'>USA&nbsp; </td><td class='fourthcolumn continent'>North America&nbsp; </td><td class='fifthcolumn digits'>&nbsp;50</td><td class='sixthcolumn date'>16 April 2020&nbsp; </td>  <td class='seventhcolumn notes'>16 sec; while juggling 3 balls&nbsp; </td> </tr> <tr class='rankingentry'>  <td class='firstcolumn ranking'>23&nbsp; </td>  <td class='secondcolumn name'>Benjaminson, Emma&nbsp;  </td><td class='thirdcolumn country'>USA&nbsp; </td><td class='fourthcolumn continent'>North America&nbsp; </td><td class='fifthcolumn digits'>&nbsp;30</td><td class='sixthcolumn date'>14 March 2007&nbsp; </td>  <td class='seventhcolumn notes'><a href='http://www.pi-world-ranking-list.com/lists/details/windhoek.html' target='_blank' style='display:inline;'>while juggling three balls</a>&nbsp; </td> </tr><tr class='rankingentry'>  <td class='firstcolumn ranking'>23&nbsp; </td>  <td class='secondcolumn name'>Giordani, Terell&nbsp;  </td><td class='thirdcolumn country'>USA&nbsp; </td><td class='fourthcolumn continent'>North America&nbsp; </td><td class='fifthcolumn digits'>&nbsp;30</td><td class='sixthcolumn date'>14 March 2007&nbsp; </td>  <td class='seventhcolumn notes'><a href='http://www.pi-world-ranking-list.com/lists/details/windhoek.html' target='_blank' style='display:inline;'>while juggling three balls</a>&nbsp; </td> </tr><tr class='rankingentry'>  <td class='firstcolumn ranking'>23&nbsp; </td>  <td class='secondcolumn name'>Hashoongo, Penda&nbsp;  </td><td class='thirdcolumn country'>Namibia&nbsp; </td><td class='fourthcolumn continent'>Africa&nbsp; </td><td class='fifthcolumn digits'>&nbsp;30</td><td class='sixthcolumn date'>14 March 2007&nbsp; </td>  <td class='seventhcolumn notes'><a href='http://www.pi-world-ranking-list.com/lists/details/windhoek.html' target='_blank' style='display:inline;'>while juggling three balls</a>&nbsp; </td> </tr><tr class='rankingentry'>  <td class='firstcolumn ranking'>23&nbsp; </td>  <td class='secondcolumn name'>Lisse, Christian&nbsp;  </td><td class='thirdcolumn country'>Namibia&nbsp; </td><td class='fourthcolumn continent'>Africa&nbsp; </td><td class='fifthcolumn digits'>&nbsp;30</td><td class='sixthcolumn date'>14 March 2007&nbsp; </td>  <td class='seventhcolumn notes'><a href='http://www.pi-world-ranking-list.com/lists/details/windhoek.html' target='_blank' style='display:inline;'>while juggling three balls</a>&nbsp; </td> </tr> 
+
+
+</tbody>
+
+</table>
+
+</div>
+
+
+
+
+
+
+
+<script type="text/javascript">
+ 
+                
+                
+             
+$(document).ready(function()
+    {
+        $("#ranking").tablesorter({
+            
+            cancelSelection: true,
+            widgets:["zebra"],
+//          sortList: [[4,1],[1,0]],
+            headers: { 
+            // assign the secound column (we start counting zero) 
+            2: { 
+                // disable it by setting the property sorter to false 
+                sorter: false 
+            }, 
+            // assign the third column (we start counting zero) 
+            3: { 
+                // disable it by setting the property sorter to false 
+                sorter: false 
+            }, 
+            // assign the third column (we start counting zero) 
+            4: { 
+                // disable it by setting the property sorter to false 
+                sorter: false 
+            }, 
+            // assign the third column (we start counting zero) 
+            5: { 
+                // disable it by setting the property sorter to false 
+                sorter: false 
+            }, 
+            // assign the third column (we start counting zero) 
+            6: { 
+                // disable it by setting the property sorter to false 
+                sorter: false 
+            }   
+            }
+         
+        });
+    }
+);
+
+</script>
+   <script> $(document).ready(function(){
+      $('#table_titles').fixed({
+				'top'	: '0'
+  
+  });
+ 			
+		});</script>  
+  
+    </div>
+</div>
+    <div style="clear:both;"> </div>
+    <div id="footer"><p>You can <a href="mailto:webmaster@pi-world-ranking-list.com?subject=pi-world-ranking-list">contact</a> us in case of questions or problems.</p> </div>
+
+</body>
+</html>

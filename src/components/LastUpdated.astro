@@ -1,0 +1,12 @@
+---
+import type { RankingRecord } from "../lib/types";
+
+const { records } = Astro.props as { records: RankingRecord[] };
+const latest = records
+  .map((record) => record.date)
+  .filter((date) => /^\d{4}-\d{2}-\d{2}$/.test(date))
+  .sort()
+  .at(-1);
+---
+
+<p class="meta">Last dated public record in this view: {latest ?? "unknown"}</p>

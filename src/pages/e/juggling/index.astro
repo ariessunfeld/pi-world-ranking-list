@@ -1,0 +1,19 @@
+---
+import Layout from "../../../components/Layout.astro";
+import Breadcrumbs from "../../../components/Breadcrumbs.astro";
+import RankingTable from "../../../components/RankingTable.astro";
+import { loadRecords } from "../../../lib/data";
+import { filterRecords, rankRecords } from "../../../lib/rankings";
+
+const records = filterRecords(loadRecords(), "e", { juggling: true });
+const ranked = rankRecords(records);
+---
+
+<Layout title="e and Juggling Ranking" description="e memorization records performed while juggling." path="/e/juggling/">
+  <Breadcrumbs items={[{ label: "Lists", href: "/lists/" }, { label: "e", href: "/e/" }, { label: "Juggling" }]} />
+  <section class="content container">
+    <h1>e and Juggling Ranking</h1>
+    <p class="lead">Public e records marked as juggling performances on the archived site.</p>
+    <RankingTable records={ranked} caption="e and juggling ranking" tableId="e-juggling-ranking" />
+  </section>
+</Layout>

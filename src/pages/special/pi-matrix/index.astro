@@ -1,0 +1,38 @@
+---
+import Layout from "../../../components/Layout.astro";
+import Breadcrumbs from "../../../components/Breadcrumbs.astro";
+import { loadSpecialPages } from "../../../lib/data";
+
+const page = loadSpecialPages().find((item) => item.id === "pi-matrix");
+---
+
+<Layout title="Pi Matrix Records" description="Pi Matrix and Everest of Memory records." path="/special/pi-matrix/">
+  <Breadcrumbs items={[{ label: "Lists", href: "/lists/" }, { label: "Pi Matrix" }]} />
+  <section class="content narrow">
+    <h1>Pi Matrix Records</h1>
+    <p class="lead">
+      Special Pi tests from the old site, including the Matrix test and Everest of Memory ranking.
+    </p>
+    <h2>Imported Records</h2>
+    <div class="table-wrap">
+      <table>
+        <caption>Pi Matrix and Everest of Memory records</caption>
+        <thead>
+          <tr><th>Rank</th><th>Name</th><th>Date</th><th>Time / Digits</th><th>Notes</th></tr>
+        </thead>
+        <tbody>
+          {page?.entries.map((entry) => (
+            <tr>
+              <td class="rank-cell">{entry.rank ?? ""}</td>
+              <td>{entry.name}</td>
+              <td>{entry.date}</td>
+              <td>{entry.time ?? entry.digits}</td>
+              <td>{entry.notes}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <p class="meta">Source: <a href={page?.source_url}>{page?.source_url}</a></p>
+  </section>
+</Layout>

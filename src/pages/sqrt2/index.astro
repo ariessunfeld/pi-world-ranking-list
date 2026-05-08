@@ -1,0 +1,31 @@
+---
+import Layout from "../../components/Layout.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import RankingTable from "../../components/RankingTable.astro";
+import LastUpdated from "../../components/LastUpdated.astro";
+import DataDownloadLinks from "../../components/DataDownloadLinks.astro";
+import { loadRecords } from "../../lib/data";
+import { filterRecords, rankRecords } from "../../lib/rankings";
+import { withBase } from "../../lib/urls";
+
+const records = filterRecords(loadRecords(), "sqrt2");
+const ranked = rankRecords(records);
+---
+
+<Layout
+  title="Square Root of 2 Ranking"
+  description="Main square root of 2 memorization ranking by digits."
+  path="/sqrt2/"
+>
+  <Breadcrumbs items={[{ label: "Lists", href: "/lists/" }, { label: "sqrt(2)" }]} />
+  <section class="content container">
+    <h1>Square Root of 2 Ranking</h1>
+    <p class="lead">Normal public records for memorizing digits of square root of 2.</p>
+    <LastUpdated records={records} />
+    <div class="button-row">
+      <a class="button" href={withBase("/sqrt2/juggling/")}>Juggling</a>
+    </div>
+    <DataDownloadLinks />
+    <RankingTable records={ranked} caption="Square root of 2 World Ranking List" tableId="sqrt2-ranking" />
+  </section>
+</Layout>

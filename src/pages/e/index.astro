@@ -1,0 +1,27 @@
+---
+import Layout from "../../components/Layout.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import RankingTable from "../../components/RankingTable.astro";
+import LastUpdated from "../../components/LastUpdated.astro";
+import DataDownloadLinks from "../../components/DataDownloadLinks.astro";
+import { loadRecords } from "../../lib/data";
+import { filterRecords, rankRecords } from "../../lib/rankings";
+import { withBase } from "../../lib/urls";
+
+const records = filterRecords(loadRecords(), "e");
+const ranked = rankRecords(records);
+---
+
+<Layout title="e Ranking" description="Main e memorization ranking by digits." path="/e/">
+  <Breadcrumbs items={[{ label: "Lists", href: "/lists/" }, { label: "e" }]} />
+  <section class="content container">
+    <h1>e Ranking</h1>
+    <p class="lead">Normal public records for memorizing digits of e.</p>
+    <LastUpdated records={records} />
+    <div class="button-row">
+      <a class="button" href={withBase("/e/juggling/")}>Juggling</a>
+    </div>
+    <DataDownloadLinks />
+    <RankingTable records={ranked} caption="e World Ranking List" tableId="e-ranking" />
+  </section>
+</Layout>

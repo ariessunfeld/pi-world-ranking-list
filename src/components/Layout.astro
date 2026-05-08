@@ -1,0 +1,40 @@
+---
+import Header from "./Header.astro";
+import Footer from "./Footer.astro";
+import { canonicalUrl } from "../lib/urls";
+import "../styles/global.css";
+
+type Props = {
+  title: string;
+  description: string;
+  path?: string;
+};
+
+const { title, description, path = Astro.url.pathname } = Astro.props;
+const fullTitle = title === "Pi World Ranking List" ? title : `${title} | Pi World Ranking List`;
+const canonical = canonicalUrl(path);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+  </head>
+  <body>
+    <div class="site-shell">
+      <Header />
+      <main class="main">
+        <slot />
+      </main>
+      <Footer />
+    </div>
+  </body>
+</html>

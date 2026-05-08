@@ -1,0 +1,162 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8">
+<title></title>
+<link rel="stylesheet" type="text/css" href="css-20120331.css" />
+<link rel="stylesheet" type="text/css" href="jquery/halftone/styles.css" />
+<script type="text/javascript" src="jquery/jquery-1.5.1.min.js"></script>
+<script type="text/javascript" src="jquery/jquery-ui-1.8.11.custom.min.js"></script>
+<script type="text/javascript" src="jquery/jquery.tablesorter.min.js"></script>
+<script type="text/javascript" src="jquery/jquery.fixed.js"></script>
+<!--<script type="text/javascript" src="jquery/halftone/script.js"></script>-->
+
+
+
+
+
+<script type="text/javascript" src="pnotify/jquery.pnotify.min.js"></script>
+<link href="pnotify/jquery.pnotify.default.css" media="all" rel="stylesheet" type="text/css" />
+<!-- Include this file if you are using Pines Icons. -->
+<!--<link href="pnotify/jquery.pnotify.default.icons.css" media="all" rel="stylesheet" type="text/css" />-->
+<style>
+.ui-pnotify-container {
+    background: #0d6f9f !important;
+    border: 2px solid #ebf4f9 !important;
+    color: #fff !important;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5) !important;
+}
+.ui-pnotify-title {
+    font-size: 14px !important;
+    color: #ff972c !important; /* using the orange color from the design */
+    margin-bottom: 8px !important;
+}
+.ui-pnotify-closer, .ui-pnotify-icon {
+    display: none !important; /* hide default broken icons */
+}
+/* custom close button */
+.custom-pnotify-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: arial, sans-serif;
+}
+.custom-pnotify-close:hover {
+    color: #ff972c;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function() {
+    if (!sessionStorage.getItem('pi_hold_closed')) {
+        $.pnotify.defaults.styling = "jqueryui";
+        $.pnotify.defaults.history = false;
+        var notice = $.pnotify({
+            title: 'Notice',
+            text: '<div style="font-size: 12px; line-height: 1.4;">Dear all, as many of you have already noticed, the Pi World Ranking List is currently on hold.<br><br>We sincerely apologize for this and hope that the circumstances will change in the future so that the Pi World Ranking List can be reactivated.<br><br>Thank you very much for your patience and understanding.</div>',
+            hide: false,
+            closer: false, /* disable default closer to use custom one */
+            closer_hover: false,
+            sticker: false
+        });
+        
+        // Add custom text-based close button
+        var closeBtn = $('<div class="custom-pnotify-close">X</div>');
+        notice.append(closeBtn);
+        
+        closeBtn.click(function() {
+            notice.pnotify_remove();
+            sessionStorage.setItem('pi_hold_closed', 'true');
+        });
+    }
+});
+</script>
+
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  // tracker methods like "setCustomDimension" should be called before "trackPageView"
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stat.designerstube.de/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', '2']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+
+</head>
+
+<body class="body">
+
+
+    <div id="top-banner"> </div>
+<div id="seite">
+﻿
+
+<div id="header">
+
+<div id="menue">
+    <div id="navigation">
+<ul>
+  <li class=" home "><a class="contact" href="index.php?page=home">Home</a></li>
+  <li class="news "><a href="index.php?page=news">News</a></li>
+  <li><a href="index.php?page=listoverview">Lists</a></li>
+  <li class="rules "><a href="index.php?page=rules">Rules</a></li>
+  <li class="background "><a href="index.php?page=background">Background</a></li>
+  <li><a href="index.php?page=links">Links</a></li>
+</ul>
+</div>
+</div>
+       
+     <div id="stage">
+    <!-- The dot divs are shown here -->
+    </div>
+</div>
+
+
+<div class="clear"></div>
+
+    <div id="content">
+    <div id="title">
+<h2>
+Registration
+</h2>
+
+   
+
+
+
+</div>
+<div id="contentinner">
+<h3>Here is how to register: </h3>
+
+
+
+
+<b>1.</b> After you achieved your performance, fill in the
+<a href="http://pi-world-ranking-list.com/form/index.html">form</a> as told in the
+<a href="index.php?page=rules">rules</a>. <br /> <br />
+<b>2.</b> <a href="mailto:webmaster@pi-world-ranking-list.com?subject=registration">Contact</a>
+us to inform us about your performance. <br /> <br />
+<b>3.</b> You will then receive the address where to send your records (form and photo). <br /> <br />
+ <br />
+You can <a href="mailto:webmaster@pi-world-ranking-list.com?subject=pi-world-ranking-list">contact </a>us in case of questions or problems.
+
+
+
+</div>
+
+    </div>
+</div>
+    <div style="clear:both;"> </div>
+    <div id="footer"><p>You can <a href="mailto:webmaster@pi-world-ranking-list.com?subject=pi-world-ranking-list">contact</a> us in case of questions or problems.</p> </div>
+
+</body>
+</html>

@@ -1,0 +1,367 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8">
+<title></title>
+<link rel="stylesheet" type="text/css" href="css-20120331.css" />
+<link rel="stylesheet" type="text/css" href="jquery/halftone/styles.css" />
+<script type="text/javascript" src="jquery/jquery-1.5.1.min.js"></script>
+<script type="text/javascript" src="jquery/jquery-ui-1.8.11.custom.min.js"></script>
+<script type="text/javascript" src="jquery/jquery.tablesorter.min.js"></script>
+<script type="text/javascript" src="jquery/jquery.fixed.js"></script>
+<!--<script type="text/javascript" src="jquery/halftone/script.js"></script>-->
+
+
+
+
+
+<script type="text/javascript" src="pnotify/jquery.pnotify.min.js"></script>
+<link href="pnotify/jquery.pnotify.default.css" media="all" rel="stylesheet" type="text/css" />
+<!-- Include this file if you are using Pines Icons. -->
+<!--<link href="pnotify/jquery.pnotify.default.icons.css" media="all" rel="stylesheet" type="text/css" />-->
+<style>
+.ui-pnotify-container {
+    background: #0d6f9f !important;
+    border: 2px solid #ebf4f9 !important;
+    color: #fff !important;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5) !important;
+}
+.ui-pnotify-title {
+    font-size: 14px !important;
+    color: #ff972c !important; /* using the orange color from the design */
+    margin-bottom: 8px !important;
+}
+.ui-pnotify-closer, .ui-pnotify-icon {
+    display: none !important; /* hide default broken icons */
+}
+/* custom close button */
+.custom-pnotify-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: arial, sans-serif;
+}
+.custom-pnotify-close:hover {
+    color: #ff972c;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function() {
+    if (!sessionStorage.getItem('pi_hold_closed')) {
+        $.pnotify.defaults.styling = "jqueryui";
+        $.pnotify.defaults.history = false;
+        var notice = $.pnotify({
+            title: 'Notice',
+            text: '<div style="font-size: 12px; line-height: 1.4;">Dear all, as many of you have already noticed, the Pi World Ranking List is currently on hold.<br><br>We sincerely apologize for this and hope that the circumstances will change in the future so that the Pi World Ranking List can be reactivated.<br><br>Thank you very much for your patience and understanding.</div>',
+            hide: false,
+            closer: false, /* disable default closer to use custom one */
+            closer_hover: false,
+            sticker: false
+        });
+        
+        // Add custom text-based close button
+        var closeBtn = $('<div class="custom-pnotify-close">X</div>');
+        notice.append(closeBtn);
+        
+        closeBtn.click(function() {
+            notice.pnotify_remove();
+            sessionStorage.setItem('pi_hold_closed', 'true');
+        });
+    }
+});
+</script>
+
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  // tracker methods like "setCustomDimension" should be called before "trackPageView"
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//stat.designerstube.de/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', '2']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+
+</head>
+
+<body class="body">
+
+
+    <div id="top-banner"> </div>
+<div id="seite">
+﻿
+
+<div id="header">
+
+<div id="menue">
+    <div id="navigation">
+<ul>
+  <li class=" home "><a class="contact" href="index.php?page=home">Home</a></li>
+  <li class="news "><a href="index.php?page=news">News</a></li>
+  <li><a href="index.php?page=listoverview">Lists</a></li>
+  <li class="rules "><a href="index.php?page=rules">Rules</a></li>
+  <li class="background "><a href="index.php?page=background">Background</a></li>
+  <li><a href="index.php?page=links">Links</a></li>
+</ul>
+</div>
+</div>
+       
+     <div id="stage">
+    <!-- The dot divs are shown here -->
+    </div>
+</div>
+
+
+<div class="clear"></div>
+
+    <div id="content">
+    <div id="title">
+<h2>
+PI MATRIX RECORDS
+</h2>
+
+   
+
+
+
+</div>
+<div id="contentinner">
+<p class="subtitle"> </p>
+
+<br>Rules :<p>
+Each line of PI is numbered and there are 50 digits on each line in blocks of five. The candidate is given a number of a line
+of PI and then has to either recite the line forward or backwards. Or he will be asked to name a certain digit on that line.
+He also may have to multiply two certain digits on different lines. The candidate has to answer 50 tests and get them all
+correct.<p>
+On 09 October 1999,
+
+
+<b>Creighton Carvello</b>
+ of England was able to pass all these tests on the first <b>10,050 digits</b>
+ of PI. His attempt took place at the Royal Holloway, University of London, Egham, Surrey, England. Two official witnesses
+were present.<p>
+
+The following performances have not yet been verified :<p>
+
+G. Uday Shankar, 7,000 digits<br>
+Bishwaroop Roy Chowdhury, 4,200 digits<br>
+Professor Aitkin, 2,000 digits
+
+<br><br><br><br><br>
+
+<BR><b>EVEREST OF MEMORY TESTS</b> <BR>
+
+
+
+
+
+<br>Rules :<p>
+The first 10,000 digits of Pi
+ are divided into 2,000 5-digit blocks. The testers call out one of these 5-digit
+sequences, and the candidate must reply with the 5-digit numbers on either side of the number chosen. This happens 50 times.
+<p>
+Ranking List:<p>
+
+<TABLE COLS=3 WIDTH=100% CELLPADDING=2 CELLSPACING=0>
+<COL WIDTH=20>
+        <COL WIDTH=95>
+        <COL WIDTH=95>
+        <COL WIDTH=105>
+
+<!--   <TR>
+            <TD HEIGHT=19 VALIGN=TOP>
+                        <P ALIGN=LEFT><b>1</b></P>
+                </TD>     <TD WIDTH=95 HEIGHT=19 VALIGN=TOP>
+                        <P ALIGN=LEFT><B>Lars Christiansen</FONT></B></P>
+                </TD>
+                <TD WIDTH=95>
+                        <P ALIGN=CENTER>10 March 2023</P>
+                </TD>
+                <TD WIDTH=105>
+                        <P ALIGN=CENTER>13 min 38,02 sec</P>
+                </TD>
+ <TD WIDTH=105>
+                        <P ALIGN=CENTER>World Record 2023
+</P>
+                </TD>
+        </TR>-->
+ <TR>
+            <TD HEIGHT=19 VALIGN=TOP>
+                        <P ALIGN=LEFT><b>1</b></P>
+                </TD>     <TD WIDTH=95 HEIGHT=19 VALIGN=TOP>
+                        <P ALIGN=LEFT><B>Lars Christiansen</FONT></B></P>
+                </TD>
+                <TD WIDTH=95>
+                        <P ALIGN=CENTER>15 March 2024</P>
+                </TD>
+                <TD WIDTH=105>
+                        <P ALIGN=CENTER>13 min 34,77 sec</P>
+                </TD>
+ <TD WIDTH=105>
+                        <P ALIGN=CENTER>World Record 2024
+</P>
+                </TD>
+        </TR>
+ <TR>
+ <TD HEIGHT=19 VALIGN=TOP>
+                        <P ALIGN=LEFT><b>2</b></P>
+                </TD>
+                <TD WIDTH=95 HEIGHT=19 VALIGN=TOP>
+                        <P ALIGN=LEFT><b>Martin Nilsson</b></P>
+                </TD>
+                <TD WIDTH=95>
+                        <P ALIGN=CENTER>05 October 2019</P>
+                </TD>
+                <TD WIDTH=105>
+                        <P ALIGN=CENTER>14 min 33.60 sec</P>
+                </TD>
+ <TD WIDTH=105>
+                        <P ALIGN=CENTER>World Record 2019
+</P>
+                </TD>
+        </TR>
+           <TR>
+ <TD HEIGHT=19 VALIGN=TOP>
+                        <P ALIGN=LEFT><b>3</b></P>
+                </TD>
+                <TD WIDTH=95 HEIGHT=19 VALIGN=TOP>
+                        <P ALIGN=LEFT><b>Kevin Horsley</b></P>
+                </TD>
+                <TD WIDTH=95>
+                        <P ALIGN=CENTER>14 March 2013</P>
+                </TD>
+                <TD WIDTH=105>
+                        <P ALIGN=CENTER>16 min 38.35 sec</P>
+                </TD>
+ <TD WIDTH=105>
+                        <P ALIGN=CENTER>World Record 2013
+</P>
+                </TD>
+        </TR>
+
+<TR>
+                <TD HEIGHT=19 VALIGN=TOP>
+                        <P ALIGN=LEFT><b>4</b></P>
+                </TD> <TD WIDTH=95 HEIGHT=19 VALIGN=TOP>
+                        <P ALIGN=LEFT><B>Mark A. Nissen</FONT></B></P>
+                </TD>
+                <TD WIDTH=95>
+                        <P ALIGN=CENTER>29 March 2019</P>
+                </TD>
+                <TD WIDTH=105>
+                        <P ALIGN=CENTER>16 min 51 sec</P>
+                </TD>
+ <TD WIDTH=105>
+                        <P ALIGN=CENTER> 
+</P>
+                </TD>
+        </TR>
+        <TR>
+                <TD HEIGHT=19 VALIGN=TOP>
+                        <P ALIGN=LEFT><b>5</b></P>
+                </TD> <TD WIDTH=95 HEIGHT=19 VALIGN=TOP>
+                        <P ALIGN=LEFT><a href="mailto:mats.bergsten@kpa.se"><B>Mats
+                        Bergsten</B></A></P>
+                </TD>
+                <TD WIDTH=95>
+                        <P ALIGN=CENTER>12 February 2008</P>
+                </TD>
+                <TD WIDTH=105>
+                        <P ALIGN=CENTER>17 min 39 sec</P>
+                </TD>
+ <TD WIDTH=105>
+                        <P ALIGN=CENTER>World Record 2008
+</P>
+                </TD>
+        </TR>
+ 
+        <TR>
+               <TD HEIGHT=19 VALIGN=TOP>
+                        <P ALIGN=LEFT><b>6</b></P>
+                </TD>  <TD HEIGHT=17>
+                        <P ALIGN=LEFT><b>Jan Harms</b></P>
+                </TD>
+                <TD>
+                        <P ALIGN=CENTER>27 July 2007</P>
+                </TD>
+                <TD>
+                        <P ALIGN=CENTER>20 min 30 sec</P>
+                </TD>
+     <TD>
+                        <P ALIGN=CENTER>World Record 2007</P>
+                </TD>    </TR>
+        <TR>
+                <TD HEIGHT=19 VALIGN=TOP>
+                        <P ALIGN=LEFT><b>7</b></P>
+                </TD> <TD HEIGHT=18>
+                        <P ALIGN=LEFT><b>Philip Bond</b></P>
+                </TD>
+                <TD>
+                        <P ALIGN=CENTER>28 June 2004</P>
+                </TD>
+                <TD>
+                        <P ALIGN=CENTER>29 min 51 sec</P>
+                </TD> <TD>
+                        <P ALIGN=CENTER>World Record 2004</P>
+                </TD>
+        </TR>
+     <TR>
+                <TD HEIGHT=19 VALIGN=TOP>
+                        <P ALIGN=LEFT><b>8</b></P>
+                </TD> <TD HEIGHT=18>
+                        <P ALIGN=LEFT><b><A HREF="http://www.concentration.co.za/">Kevin
+                        Horsley</A></b></P>
+                </TD>
+                <TD>
+                        <P ALIGN=CENTER>28 Aug 1999</P>
+                </TD>
+                <TD>
+                        <P ALIGN=CENTER>39 min</P>
+                </TD> <TD>
+                        <P ALIGN=CENTER>World Record 1999</P>
+                </TD>
+        </TR>
+        <TR>
+               <TD HEIGHT=19 VALIGN=TOP>
+                        <P ALIGN=LEFT><b>9</b></P>
+                </TD>  <TD HEIGHT=18>
+                        <P ALIGN=LEFT><b>Philip Bond</b></P>
+                </TD>
+                <TD SDVAL="1994" SDNUM="1031;">
+                        <P ALIGN=CENTER>18 May 1994</P>
+                </TD>
+                <TD>
+                        <P ALIGN=CENTER>53 min</P>
+                </TD> <TD>
+                        <P ALIGN=CENTER>World Record 1994</P>
+                </TD>
+        </TR>
+</TABLE>
+
+<br /><br /><br />
+<b>OLYMPUS MONS OF MEMORY TESTS</b><br /><br />
+Rules :<br /><br />
+The first 100,000 digits of Pi are divided into 1,000 pages, containing 10
+rows with 9 digits and 1 row with 10 digits each. The testers call out one of
+these 9- or 10-digit sequences, and the candidate must reply with the 9- or
+10-digit numbers on either side of the number chosen. This happens 50
+times.<br /><br />
+Jonas von Essen from Sweden was the first to pass this test on 10 March
+2020 in a time of 33 minutes and 00,63 seconds.
+
+</div>    </div>
+</div>
+    <div style="clear:both;"> </div>
+    <div id="footer"><p>You can <a href="mailto:webmaster@pi-world-ranking-list.com?subject=pi-world-ranking-list">contact</a> us in case of questions or problems.</p> </div>
+
+</body>
+</html>

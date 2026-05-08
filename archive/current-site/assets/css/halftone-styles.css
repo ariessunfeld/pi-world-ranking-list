@@ -1,0 +1,37 @@
+body,quote,small,form,input,ul,li,ol,label{
+	/* Simple page reset */
+	margin:0;
+	padding:0;
+}
+
+
+
+
+
+
+#stage{
+	/* The stage contains the individual divs that comprise the halftone icon: */
+	height:100px;
+	position:absolute;
+	right:20px;
+	top:40px;
+	width:200px;
+}
+
+.dot{
+	/* The stage contains 192 .dot divs: */
+	float:left;
+	height:15px;
+	width:15px;
+}
+
+.dot.active{
+	/* When assigned the active class, the div shows a background image of a dot: */
+	background:url(img/dot.png) no-repeat center center;
+}
+
+.clear{
+	/* Old-school clear fix hack to clear the floats: */
+	clear:both;
+}
+

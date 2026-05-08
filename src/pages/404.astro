@@ -1,0 +1,12 @@
+---
+import Layout from "../components/Layout.astro";
+import { withBase } from "../lib/urls";
+---
+
+<Layout title="Page Not Found" description="The requested page was not found." path="/404/">
+  <section class="content narrow">
+    <h1>Page Not Found</h1>
+    <p>The page does not exist in this static rebuild.</p>
+    <a class="button" href={withBase("/")}>Return home</a>
+  </section>
+</Layout>

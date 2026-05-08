@@ -1,0 +1,125 @@
+---
+import type { RankedRecord } from "../lib/types";
+
+const { records, caption, tableId = "ranking-table" } = Astro.props as {
+  records: RankedRecord[];
+  caption: string;
+  tableId?: string;
+};
+
+function sourceLabel(url: string) {
+  return url.includes("page=lists") || url === "https://www.pi-world-ranking-list.com/"
+    ? ""
+    : "source";
+}
+---
+
+<section class="ranking-table-widget" data-ranking-widget>
+  <div class="toolbar">
+    <div class="field">
+      <label for={`${tableId}-search`}>Search this table</label>
+      <input id={`${tableId}-search`} data-table-search type="search" autocomplete="off" />
+    </div>
+    <p class="meta" data-visible-count>{records.length.toLocaleString()} records</p>
+  </div>
+  <div class="table-wrap">
+    <table id={tableId}>
+      <caption>{caption}</caption>
+      <thead>
+        <tr>
+          <th scope="col"><button type="button" data-sort="rank" data-type="number">Rank</button></th>
+          <th scope="col"><button type="button" data-sort="name">Name</button></th>
+          <th scope="col"><button type="button" data-sort="country">Country</button></th>
+          <th scope="col"><button type="button" data-sort="continent">Continent</button></th>
+          <th scope="col"><button type="button" data-sort="digits" data-type="number">Digits</button></th>
+          <th scope="col"><button type="button" data-sort="date">Date</button></th>
+          <th scope="col">Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        {
+          records.map((record) => (
+            <tr
+              data-row
+              data-rank={record.rank}
+              data-name={record.sort_name.toLocaleLowerCase()}
+              data-country={record.country.toLocaleLowerCase()}
+              data-continent={record.continent.toLocaleLowerCase()}
+              data-digits={record.digits}
+              data-date={record.date || record.date_text}
+              data-search={`${record.display_name} ${record.country} ${record.continent} ${record.digits} ${record.date_text} ${record.notes}`.toLocaleLowerCase()}
+            >
+              <td class="rank-cell">{record.rank}</td>
+              <td>{record.display_name}</td>
+              <td>{record.country}</td>
+              <td>{record.continent}</td>
+              <td class="digits-cell">{record.digits.toLocaleString()}</td>
+              <td>{record.date_text || "unknown"}</td>
+              <td class="notes-cell">
+                {record.notes}
+                {sourceLabel(record.source_url) && (
+                  <a class="source-link" href={record.source_url}>
+                    {sourceLabel(record.source_url)}
+                  </a>
+                )}
+              </td>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<script>
+  function initRankingTables() {
+    document.querySelectorAll("[data-ranking-widget]").forEach((widget) => {
+      const input = widget.querySelector("[data-table-search]") as HTMLInputElement | null;
+      const tbody = widget.querySelector("tbody") as HTMLTableSectionElement | null;
+      const rows = tbody
+        ? (Array.from(tbody.querySelectorAll("[data-row]")) as HTMLElement[])
+        : [];
+      const count = widget.querySelector("[data-visible-count]");
+      let activeSort: { key: string; direction: "asc" | "desc"; type: string } = {
+        key: "rank",
+        direction: "asc",
+        type: "number",
+      };
+
+      function updateFilter() {
+        const term = input ? input.value.trim().toLocaleLowerCase() : "";
+        let visible = 0;
+        rows.forEach((row) => {
+          const match = !term || (row.dataset.search ?? "").includes(term);
+          row.hidden = !match;
+          if (match) visible += 1;
+        });
+        if (count) count.textContent = `${visible.toLocaleString()} records`;
+      }
+
+      function sortRows(key = "rank", type = "text") {
+        if (!tbody) return;
+        const direction =
+          activeSort.key === key && activeSort.direction === "asc" ? "desc" : "asc";
+        activeSort = { key, direction, type };
+        const multiplier = direction === "asc" ? 1 : -1;
+        const sorted = [...rows].sort((a, b) => {
+          const av = a.dataset[key] || "";
+          const bv = b.dataset[key] || "";
+          if (type === "number") return (Number(av) - Number(bv)) * multiplier;
+          return av.localeCompare(bv, undefined, { numeric: true, sensitivity: "base" }) * multiplier;
+        });
+        sorted.forEach((row) => tbody.appendChild(row));
+      }
+
+      input?.addEventListener("input", updateFilter);
+      widget.querySelectorAll("[data-sort]").forEach((element) => {
+        const button = element as HTMLButtonElement;
+        button.addEventListener("click", () => sortRows(button.dataset.sort, button.dataset.type));
+      });
+      updateFilter();
+    });
+  }
+
+  initRankingTables();
+</script>

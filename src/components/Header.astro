@@ -1,0 +1,33 @@
+---
+import { withBase } from "../lib/urls";
+
+const currentPath = Astro.url.pathname.replace(/\/$/, "") || "/";
+const navItems = [
+  ["/", "Home"],
+  ["/news/", "News"],
+  ["/lists/", "Lists"],
+  ["/rules/", "Rules"],
+  ["/background/", "Background"],
+  ["/links/", "Links"],
+];
+
+function isCurrent(path: string) {
+  const normalized = withBase(path).replace(/\/$/, "") || "/";
+  return currentPath === normalized;
+}
+---
+
+<header class="site-header">
+  <div class="container topbar">
+    <a class="brand" href={withBase("/")}>Pi World Ranking List</a>
+    <nav class="nav" aria-label="Primary navigation">
+      {
+        navItems.map(([href, label]) => (
+          <a href={withBase(href)} aria-current={isCurrent(href) ? "page" : undefined}>
+            {label}
+          </a>
+        ))
+      }
+    </nav>
+  </div>
+</header>

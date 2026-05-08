@@ -1,0 +1,37 @@
+---
+import Layout from "../../../components/Layout.astro";
+import Breadcrumbs from "../../../components/Breadcrumbs.astro";
+import { loadSpecialPages } from "../../../lib/data";
+
+const page = loadSpecialPages().find((item) => item.id === "pi-permutation");
+---
+
+<Layout title="The Pi Permutation" description="Pi Permutation discipline records and explanation." path="/special/pi-permutation/">
+  <Breadcrumbs items={[{ label: "Lists", href: "/lists/" }, { label: "Pi Permutation" }]} />
+  <section class="content narrow">
+    <h1>The Pi Permutation</h1>
+    <p class="lead">
+      The Pi Permutation asks competitors to answer randomly chosen digit-position questions from a
+      known range of Pi digits. The public record notes from the old site are preserved here.
+    </p>
+    <div class="table-wrap">
+      <table>
+        <caption>Imported Pi Permutation records</caption>
+        <thead>
+          <tr><th>Name</th><th>Date</th><th>Discipline</th><th>Time</th></tr>
+        </thead>
+        <tbody>
+          {page?.entries.map((entry) => (
+            <tr>
+              <td>{entry.name}</td>
+              <td>{entry.date}</td>
+              <td>{entry.discipline}</td>
+              <td>{entry.time}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <p class="meta">Source: <a href={page?.source_url}>{page?.source_url}</a></p>
+  </section>
+</Layout>

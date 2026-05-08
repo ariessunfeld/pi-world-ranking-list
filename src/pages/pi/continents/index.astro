@@ -1,0 +1,19 @@
+---
+import Layout from "../../../components/Layout.astro";
+import Breadcrumbs from "../../../components/Breadcrumbs.astro";
+import GroupedRankingTable from "../../../components/GroupedRankingTable.astro";
+import { loadRecords } from "../../../lib/data";
+import { filterRecords, groupRankedRecords } from "../../../lib/rankings";
+
+const records = filterRecords(loadRecords(), "pi");
+const groups = groupRankedRecords(records, "continent");
+---
+
+<Layout title="Pi Continent Rankings" description="Pi rankings grouped by continent." path="/pi/continents/">
+  <Breadcrumbs items={[{ label: "Lists", href: "/lists/" }, { label: "Pi", href: "/pi/" }, { label: "Continents" }]} />
+  <section class="content container">
+    <h1>Pi Continent Rankings</h1>
+    <p class="lead">Continent rankings are generated from the same canonical Pi records.</p>
+    <GroupedRankingTable groups={groups} caption="Pi continent ranking" />
+  </section>
+</Layout>
