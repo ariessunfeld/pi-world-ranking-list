@@ -1,0 +1,21 @@
+---
+import Layout from "../../components/Layout.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import { withBase } from "../../lib/urls";
+---
+
+<Layout title="Background" description="Background story for the Pi World Ranking List." path="/background/">
+  <Breadcrumbs items={[{ label: "Background" }]} />
+  <section class="content narrow">
+    <h1>Background</h1>
+    <p>Every sport has its championship. Every sport has its world ranking list.</p>
+    <p>
+      For many people who memorize numbers, Pi is the ultimate number. A ranking list helps
+      competitors get in touch and understand where they stand in the world of memorizers.
+    </p>
+    <p>
+      The list exists to be fair, public, and accurate. The same rules also apply to the public
+      rankings for <a href={withBase("/e/")}>e</a> and <a href={withBase("/sqrt2/")}>sqrt(2)</a>.
+    </p>
+  </section>
+</Layout>
