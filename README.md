@@ -5,10 +5,17 @@ This is a production-ready static rebuild of the public Pi World Ranking List.
 It is intended to be a **new separate GitHub repository** named `pi-world-ranking-list`.
 Do not put this project inside, or use it to replace, `ariessunfeld.github.io`.
 
-Initial GitHub Pages URL:
+Initial GitHub Pages project URL:
 
 ```text
 https://ariessunfeld.github.io/pi-world-ranking-list/
+```
+
+On Ari's GitHub Pages account, that project URL currently redirects to the
+custom-domain URL:
+
+```text
+https://www.ariessunfeld.com/pi-world-ranking-list/
 ```
 
 ## Stack
@@ -21,10 +28,10 @@ https://ariessunfeld.github.io/pi-world-ranking-list/
 - Vitest tests
 - GitHub Actions deployment to GitHub Pages
 
-Astro is configured for a GitHub Pages project site:
+Astro is configured for a GitHub Pages project site under the project path:
 
 ```js
-site: "https://ariessunfeld.github.io"
+site: "https://www.ariessunfeld.com"
 base: "/pi-world-ranking-list"
 ```
 
@@ -158,6 +165,12 @@ Create a new repository:
 
 ```text
 https://ariessunfeld.github.io/pi-world-ranking-list/
+```
+
+If GitHub Pages redirects to Ari's custom domain, the live URL is:
+
+```text
+https://www.ariessunfeld.com/pi-world-ranking-list/
 ```
 
 Initial push commands:

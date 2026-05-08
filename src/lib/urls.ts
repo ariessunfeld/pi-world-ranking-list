@@ -5,7 +5,7 @@ export function withBase(path: string) {
 }
 
 export function canonicalUrl(path: string) {
-  const site = "https://ariessunfeld.github.io";
+  const site = "https://www.ariessunfeld.com";
   const cleanPath = path.startsWith("/") ? path : `/${path}`;
   return `${site}${withBase(cleanPath)}`;
 }
